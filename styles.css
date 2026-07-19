@@ -884,7 +884,7 @@ html{
 /* Techo */
 .techoFaro {
     position: absolute;
-    top: 0;
+    top: 430px;
     left: 5px;
 
     width: 52px;
@@ -963,6 +963,7 @@ html{
 /* Base */
 .baseFaro {
     position: absolute;
+    top: 560px;
     left: 4px;
     bottom: 0;
 
