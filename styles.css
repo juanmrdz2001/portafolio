@@ -239,21 +239,16 @@ nav a:hover::after {
     gap: 16px;
 }
 
-.btnHero {
-    min-width: 180px;
-    padding: 14px 24px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 10px;
-
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: bold;
-
-    transition: 0.3s;
+.btnHero{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:14px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
 }
 
 .btnPrincipal {
@@ -837,4 +832,278 @@ nav a:hover::after {
         font-size:.95rem;
     }
 
+}
+
+.btnProyectos{
+    scroll-behavior:smooth;
+}
+
+.btnProyectos:hover{
+    transform:translateY(-3px);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+#proyectos{
+    scroll-margin-top:90px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#proyectos{
+    scroll-margin-top: 90px;
+}
+
+/* Contenedor del faro */
+.faroPortafolio {
+    position: absolute;
+    top: 25px;
+    right: 45px;
+
+    width: 150px;
+    height: 190px;
+
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Torre */
+.torreFaro {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+
+    width: 62px;
+    height: 145px;
+}
+
+/* Techo */
+.techoFaro {
+    position: absolute;
+    top: 0;
+    left: 5px;
+
+    width: 52px;
+    height: 20px;
+
+    background: #263238;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+/* Área de luz */
+.luzFaro {
+    position: absolute;
+    top: 450px;
+    left: 8px;
+
+    width: 46px;
+    height: 30px;
+
+    border: 3px solid #263238;
+    border-radius: 6px 6px 3px 3px;
+
+    background: rgba(255, 235, 120, 0.9);
+    box-shadow: 0 0 20px rgba(255, 230, 100, 0.8);
+}
+
+/* Bombilla */
+.luzFaro span {
+    position: absolute;
+    top: 7px;
+    left: 17px;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    background: #fffde7;
+
+    box-shadow:
+        0 0 8px #ffffff,
+        0 0 18px #ffe66d;
+}
+
+/* Cuerpo del faro */
+.cuerpoFaro {
+    position: absolute;
+    top: 480px;
+    left: 13px;
+
+    width: 36px;
+    height: 82px;
+
+    border-radius: 5px 5px 10px 10px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #f5f5f5 0,
+            #f5f5f5 20px,
+            #d84343 20px,
+            #d84343 40px
+        );
+
+    clip-path: polygon(18% 0, 82% 0, 100% 100%, 0 100%);
+}
+
+/* Ventanas */
+.ventanaFaro {
+    width: 9px;
+    height: 13px;
+    margin: 14px auto;
+
+    border-radius: 2px;
+    background: #263238;
+}
+
+/* Base */
+.baseFaro {
+    position: absolute;
+    left: 4px;
+    bottom: 0;
+
+    width: 54px;
+    height: 15px;
+
+    border-radius: 6px 6px 2px 2px;
+    background: #263238;
+}
+
+/* Haz de luz */
+.hazFaro {
+    position: absolute;
+    top: 460px;
+    right: 62px;
+
+    width: 280px;
+    height: 95px;
+
+    transform-origin: right center;
+    transform: rotate(-12deg);
+
+    clip-path: polygon(100% 42%, 0 0, 0 100%, 100% 58%);
+
+    background: linear-gradient(
+        to left,
+        rgba(255, 244, 160, 0.55),
+        rgba(255, 244, 160, 0.16),
+        transparent
+    );
+
+    filter: blur(2px);
+
+    animation: girarHaz 6s ease-in-out infinite alternate;
+}
+
+@keyframes girarHaz {
+    from {
+        transform: rotate(-18deg);
+    }
+
+    to {
+        transform: rotate(18deg);
+    }
+}
+
+/* Etiquetas */
+.etiquetaTecnologia {
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Etiqueta iluminada */
+.etiquetaTecnologia.iluminada {
+    color: #172033;
+    background: #fff2a8;
+
+    transform: translateY(-4px) scale(1.06);
+
+    box-shadow:
+        0 0 12px rgba(255, 235, 120, 0.75),
+        0 0 26px rgba(255, 235, 120, 0.45);
+}
+
+@media (max-width: 700px) {
+    .faroPortafolio {
+        top: 15px;
+        right: 10px;
+        transform: scale(0.7);
+        transform-origin: top right;
+    }
+
+    .hazFaro {
+        display: none;
+    }
+}
+
+/* Logotipos iluminados por el faro */
+.logosFaro {
+    position: absolute;
+
+    /* Queda enfrente de la punta del haz */
+    top: 452px;
+    right: 345px;
+
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 4;
+}
+
+/* Cada logotipo */
+.logoTecnologiaFaro {
+    position: absolute;
+
+    width: 100%;
+    max-height: 105px;
+
+    object-fit: contain;
+
+    opacity: 0;
+    transform: scale(0.65);
+
+    filter:
+        drop-shadow(0 0 5px rgba(255, 240, 130, 0.9))
+        drop-shadow(0 0 18px rgba(255, 220, 70, 0.65));
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s ease;
+}
+
+/* Logotipo visible */
+.logoTecnologiaFaro.activo {
+    opacity: 1;
+    transform: scale(1);
+    animation: brilloLogoFaro 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes brilloLogoFaro {
+    from {
+        filter:
+            drop-shadow(0 0 5px rgba(255, 240, 130, 0.7))
+            drop-shadow(0 0 12px rgba(255, 220, 70, 0.45));
+    }
+
+    to {
+        filter:
+            drop-shadow(0 0 10px rgba(255, 250, 190, 1))
+            drop-shadow(0 0 28px rgba(255, 220, 70, 0.85));
+    }
+}
+
+.logosFaro {
+    top: 452px;
+    right: 345px;
 }
